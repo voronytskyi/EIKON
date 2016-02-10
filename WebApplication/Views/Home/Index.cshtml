@@ -1,0 +1,38 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+@section scripts{
+    @Scripts.Render("~/bundles/app")
+}
+<div ng-app="omdb" ng-controller="MainCtrl as mainCtrl">
+    <h2 class="text-center">
+        Welcome to Open Movie Database!
+    </h2>
+    <div class="row">
+        <div class="col-lg-6">
+            <p>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Search..." ng-model="mainCtrl.searchText">
+                    <!--<span class="input-group-addon">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </span>-->
+                    <span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="mainCtrl.search()"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>
+                </div>
+            </p>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="movie in mainCtrl.movies">
+            <a class="thumbnail" href="#" ng-click="mainCtrl.toggleModal()">
+                <img class="img-responsive" src="http://placehold.it/400x300" alt="" ng-src="{{movie.Poster}}">
+                <span class="movie-title">{{movie.Title}}</span>
+                <span class="movie-year">{{movie.Year}}</span>
+            </a>
+        </div>
+    </div>
+    <modal title="Movie Details" visible="mainCtrl.showModal">
+        Hello
+    </modal>
+</div>

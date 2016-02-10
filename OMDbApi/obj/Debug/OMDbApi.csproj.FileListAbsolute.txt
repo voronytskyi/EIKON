@@ -1,0 +1,6 @@
+C:\Users\MVO\Desktop\EIKON\OMDbApi\bin\Debug\OMDbApi.dll
+C:\Users\MVO\Desktop\EIKON\OMDbApi\bin\Debug\OMDbApi.pdb
+C:\Users\MVO\Desktop\EIKON\OMDbApi\bin\Debug\Newtonsoft.Json.dll
+C:\Users\MVO\Desktop\EIKON\OMDbApi\bin\Debug\Newtonsoft.Json.xml
+C:\Users\MVO\Desktop\EIKON\OMDbApi\obj\Debug\OMDbApi.dll
+C:\Users\MVO\Desktop\EIKON\OMDbApi\obj\Debug\OMDbApi.pdb
