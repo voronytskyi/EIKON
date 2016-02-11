@@ -11,6 +11,9 @@
                 // show error
                 return null;
             }
+
+            toastr.error('Tada!');
+
             return response.data;
         };
 
