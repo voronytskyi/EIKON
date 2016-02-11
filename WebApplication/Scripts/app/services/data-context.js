@@ -9,11 +9,9 @@
             //Validate response here, then pass it forward
             if (response.data.IsSuccess === false) {
                 // show error
+                toastr["error"](response.data.ErrorMessage, "Error");
                 return null;
             }
-
-            toastr.error('Tada!');
-
             return response.data;
         };
 

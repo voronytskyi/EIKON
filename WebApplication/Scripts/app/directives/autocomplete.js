@@ -26,12 +26,11 @@
                             process(items);
                         });
                     },
+                    showHintOnFocus : true,
                     autoSelect: true,
                     afterSelect: function (item) {
-                        var a1 = scope;
-                        var a2 = dataContext;
                         //trigger load grid from heres
-                        scope.$broadcast(settings.events.autocomplete, item);
+                        scope.$root.$broadcast(settings.events.autocomplete, item);
                     }
                 });
             }

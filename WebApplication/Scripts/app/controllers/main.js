@@ -2,6 +2,7 @@
     'use strict';
 
     angular.module('omdb.controllers').controller('MainCtrl', ['$scope', 'dataContext', 'settings', function ($scope, dataContext, settings) {
+        var that = this;
         this.movies = [];
         this.totalCount = 0;
         this.searchText = 'james';
@@ -15,13 +16,13 @@
             this.search();
             //Subscribe on autocomplete updates
             $scope.$on(settings.events.autocomplete, function (event, item) {
-                console.log(item);
+                that.search();
             });
 
             toastr.options = {
                 closeButton: true,
                 debug: false,
-                positionClass: 'toast-bottom-right',
+                positionClass: 'toast-top-right',
                 showDuration: 300,
                 hideDuration: 1000,
                 timeOut: 5000
