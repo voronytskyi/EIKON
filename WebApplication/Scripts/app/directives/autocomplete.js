@@ -50,7 +50,6 @@
                     afterSelect : function(item) {
                         var a1 = scope;
                         var a2 = dataContext;
-                        debugger;
                         //trigger load grid from heres
                     }
                 });

@@ -23,7 +23,7 @@
             scope: true,
             link: function postLink(scope, element, attrs) {
                 scope.title = attrs.title;
-
+                $(element).modal();
                 scope.$watch(attrs.visible, function (value) {
                     if (value == true) {
                         $(element).find('.modal-body').hide();
