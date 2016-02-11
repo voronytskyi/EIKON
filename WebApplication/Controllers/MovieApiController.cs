@@ -94,9 +94,9 @@ namespace WebApplication.Controllers
                     Runtime = detailsDto.Runtime,
                     Type = detailsDto.Type,
                     Year = detailsDto.Year,
-                    imdbID = detailsDto.imdbID,
-                    imdbRating = detailsDto.imdbRating,
-                    imdbVotes = detailsDto.imdbVotes
+                    imdbID = detailsDto.ImdbID,
+                    imdbRating = detailsDto.ImdbRating,
+                    imdbVotes = detailsDto.ImdbVotes
                 };
                 return Json(responseDto, JsonRequestBehavior.AllowGet);
             }

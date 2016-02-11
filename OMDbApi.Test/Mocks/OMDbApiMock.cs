@@ -12,9 +12,12 @@ namespace OMDbApi.Test.Mocks
         public void InitSearchMock(List<ApiSearchDto> itemList)
         {
             _itemList = itemList;
-        } 
+        }
 
-
+        public void InitDetailsMock(List<ApiDetailsDto> detailsList)
+        {
+            _detailsList = detailsList;
+        }
 
         public ApiSearchRootDto Search(string title, int? page)
         {
@@ -38,7 +41,7 @@ namespace OMDbApi.Test.Mocks
             {
                 throw new ApplicationException("Please init search mock.");
             }
-            return _detailsList.FirstOrDefault(x => x.imdbID == id);
+            return _detailsList.FirstOrDefault(x => x.ImdbID == id);
         }
     }
 }

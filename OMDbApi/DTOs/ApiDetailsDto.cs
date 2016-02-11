@@ -4,6 +4,9 @@
     {
         public string Title;
         public string Year;
+        public string ImdbID;
+        public string Type;
+        public string Poster;
         public string Rated;
         public string Released;
         public string Runtime;
@@ -15,11 +18,8 @@
         public string Language;
         public string Country;
         public string Awards;
-        public string Poster;
         public string Metascore;
-        public string imdbRating;
-        public string imdbVotes;
-        public string imdbID;
-        public string Type;
+        public string ImdbRating;
+        public string ImdbVotes;
     }
 }
