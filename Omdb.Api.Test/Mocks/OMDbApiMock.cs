@@ -31,7 +31,7 @@ namespace Omdb.Api.Test.Mocks
             {
                 itemSearchList.Skip(page.Value * _pageSize).Take(_pageSize).ToList();
             }
-            ApiSearchRootDto searchRootDto = new ApiSearchRootDto()
+            var searchRootDto = new ApiSearchRootDto()
             {
                 Response = true,
                 Search = itemSearchList,

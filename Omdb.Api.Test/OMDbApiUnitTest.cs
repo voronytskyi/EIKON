@@ -16,7 +16,7 @@ namespace Omdb.Api.Test
         {
             // Arrange
             OMDbApiMock api = new OMDbApiMock();
-            List<ApiSearchDto> itemList = new List<ApiSearchDto>
+            var itemList = new List<ApiSearchDto>
             {
                 TestHelper.GetSearchDto("1"),
                 TestHelper.GetSearchDto("2"),
@@ -47,7 +47,7 @@ namespace Omdb.Api.Test
         {
             // Arrange
             OMDbApiMock api = new OMDbApiMock();
-            List<ApiDetailsDto> detailsList = new List<ApiDetailsDto>()
+            var detailsList = new List<ApiDetailsDto>()
             {
                 TestHelper.GetDetailsDto("1"),
                 TestHelper.GetDetailsDto("2"),
@@ -62,7 +62,5 @@ namespace Omdb.Api.Test
             var expected = TestHelper.GetDetailsDto(id);
             AssertHelper.AreEqual(expected, result);
         }
-
-
     }
 }

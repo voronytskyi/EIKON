@@ -36,7 +36,7 @@ namespace WebApplication.Controllers
             }
             if (searchRootDto.Response)
             {
-                List<SearchItemDto> searchDtoList = new List<SearchItemDto>();
+                var searchDtoList = new List<SearchItemDto>();
                 foreach (var responseDto in searchRootDto.Search)
                 {
                     searchDtoList.Add(new SearchItemDto()
@@ -48,7 +48,7 @@ namespace WebApplication.Controllers
                         Type = responseDto.Type
                     });
                 }
-                SearchDto searchDto = new SearchDto()
+                var searchDto = new SearchDto()
                 {
                     Items = searchDtoList,
                     TotalCount = searchRootDto.TotalResults
@@ -78,7 +78,7 @@ namespace WebApplication.Controllers
             }
             if (detailsDto.Response)
             {
-                DetailsDto responseDto = new DetailsDto()
+                var responseDto = new DetailsDto()
                 {
                     Actors = detailsDto.Actors,
                     Awards = detailsDto.Awards,
