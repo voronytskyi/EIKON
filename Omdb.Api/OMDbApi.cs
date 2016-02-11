@@ -53,7 +53,7 @@ namespace Omdb.Api
             Stream dataStream = response.GetResponseStream();
             if (dataStream != null)
             {
-                StreamReader reader = new StreamReader(dataStream);
+                var reader = new StreamReader(dataStream);
                 string responseFromServer = reader.ReadToEnd();
                 reader.Close();
                 response.Close();
@@ -65,7 +65,7 @@ namespace Omdb.Api
 
         private string ComposeParameters(RequestParamteres requestDto)
         {
-            Dictionary<string, string> parameterDictionary = new Dictionary<string, string>();
+            var parameterDictionary = new Dictionary<string, string>();
             if (!string.IsNullOrEmpty(requestDto.ImdbId))
             {
                 parameterDictionary.Add("i", requestDto.ImdbId);
@@ -85,8 +85,8 @@ namespace Omdb.Api
 
         private string ConcatenateParameters(Dictionary<string, string> parameterDictionary)
         {
-            StringBuilder parameters = new StringBuilder();
-            int count = 0;
+            var parameters = new StringBuilder();
+            var count = 0;
             foreach (var item in parameterDictionary)
             {
                 parameters.Append(string.Format("{0}={1}", item.Key, item.Value));

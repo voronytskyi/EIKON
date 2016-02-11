@@ -34,7 +34,7 @@ namespace WebApplication
 
         protected void Application_Error(Object sender, EventArgs e)
         {
-            ILog logger = DependencyResolver.Current.GetService<ILog>();
+            var logger = DependencyResolver.Current.GetService<ILog>();
             Exception exception = Server.GetLastError();
             logger.Error(exception);
         }

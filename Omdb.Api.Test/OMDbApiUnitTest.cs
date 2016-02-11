@@ -15,7 +15,7 @@ namespace Omdb.Api.Test
         public void Search(string title, int? page)
         {
             // Arrange
-            OMDbApiMock api = new OMDbApiMock();
+            var api = new OMDbApiMock();
             var itemList = new List<ApiSearchDto>
             {
                 TestHelper.GetSearchDto("1"),
@@ -46,7 +46,7 @@ namespace Omdb.Api.Test
         public void Details(string id)
         {
             // Arrange
-            OMDbApiMock api = new OMDbApiMock();
+            var api = new OMDbApiMock();
             var detailsList = new List<ApiDetailsDto>()
             {
                 TestHelper.GetDetailsDto("1"),
