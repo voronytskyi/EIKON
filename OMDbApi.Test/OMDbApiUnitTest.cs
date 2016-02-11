@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using NUnit.Framework;
 using OMDbApi.DTOs;
+using OMDbApi.Test.Helpers;
 using OMDbApi.Test.Mocks;
 
 namespace OMDbApi.Test
@@ -8,70 +9,60 @@ namespace OMDbApi.Test
     [TestFixture]
     public class OMDbApiUnitTest
     {
-        private OMDbApiMock _apiMock;
-        [SetUp]
-        public void Init()
+        [TestCase("1", null)]
+        [TestCase("2", 0)]
+        [TestCase("5", null, ExpectedException = typeof(AssertionException))]
+        public void Search(string title, int? page)
         {
-            _apiMock = new OMDbApiMock();
+            // Arrange
+            OMDbApiMock api = new OMDbApiMock();
             List<ApiSearchDto> itemList = new List<ApiSearchDto>
             {
-                GetSearchDto("1"),
-                GetSearchDto("2"),
-                GetSearchDto("3")
+                TestHelper.GetSearchDto("1"),
+                TestHelper.GetSearchDto("2"),
+                TestHelper.GetSearchDto("3")
             };
-            _apiMock.InitSearchMock(itemList);
+            api.InitSearchMock(itemList);
 
+            // Act
+            var result = api.Search(title, page);
+
+            // Assert
+            var expected = new ApiSearchRootDto()
+            {
+                Search = new List<ApiSearchDto>()
+                {
+                    TestHelper.GetSearchDto(title)
+                },
+                Response = true,
+                TotalResults = 1
+            };
+            AssertHelper.AreEqual(expected, result);
+        }
+
+        [TestCase("1")]
+        [TestCase("2")]
+        [TestCase("5", ExpectedException = typeof(AssertionException))]
+        public void Details(string id)
+        {
+            // Arrange
+            OMDbApiMock api = new OMDbApiMock();
             List<ApiDetailsDto> detailsList = new List<ApiDetailsDto>()
             {
-                GetDetailsDto("1"),
-                GetDetailsDto("2"),
-                GetDetailsDto("3"),
+                TestHelper.GetDetailsDto("1"),
+                TestHelper.GetDetailsDto("2"),
+                TestHelper.GetDetailsDto("3"),
             };
-            _apiMock.InitDetailsMock(detailsList);
+            api.InitDetailsMock(detailsList);
+
+            // Act
+            var result = api.GetDetails(id);
+
+            // Assert
+            var expected = TestHelper.GetDetailsDto(id);
+            AssertHelper.AreEqual(expected, result);
         }
 
-        private ApiSearchDto GetSearchDto(string text)
-        {
-            return new ApiSearchDto
-            {
-                Poster = text,
-                ImdbID = text,
-                Title = text,
-                Type = text,
-                Year = text
-            };
-        }
 
-        private ApiDetailsDto GetDetailsDto(string text)
-        {
-            return new ApiDetailsDto()
-            {
-                Poster = text,
-                ImdbID = text,
-                Title = text,
-                Type = text,
-                Year = text,
-                Actors = text,
-                Awards = text,
-                Country = text,
-                Director = text,
-                Genre = text,
-                ImdbRating = text,
-                ImdbVotes = text,
-                Language = text,
-                Metascore = text,
-                Plot = text,
-                Rated = text,
-                Released = text,
-                Runtime = text,
-                Writer = text
-            };
-        }
-
-        [TestCase("")]
-        public void Search(string title)
-        {
-
-        }
     }
 }

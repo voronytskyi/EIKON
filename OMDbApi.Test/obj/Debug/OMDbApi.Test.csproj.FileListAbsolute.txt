@@ -31,3 +31,5 @@ C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\bin\Debug\nunit.framework.xml
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.dll
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.pdb
+C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\bin\Debug\nunit.mocks.dll
+C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi.Test\bin\Debug\pnunit.framework.dll

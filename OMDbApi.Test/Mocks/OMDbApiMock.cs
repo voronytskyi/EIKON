@@ -7,6 +7,7 @@ namespace OMDbApi.Test.Mocks
 {
     public class OMDbApiMock : IOMDbApi
     {
+        private int _pageSize = 10;
         private List<ApiSearchDto> _itemList;
         private List<ApiDetailsDto> _detailsList;
         public void InitSearchMock(List<ApiSearchDto> itemList)
@@ -26,6 +27,10 @@ namespace OMDbApi.Test.Mocks
                 throw new ApplicationException("Please init search mock.");
             }
             var itemSearchList = _itemList.Where(x => x.Title.Contains(title)).ToList();
+            if (page.HasValue)
+            {
+                itemSearchList.Skip(page.Value * _pageSize).Take(_pageSize).ToList();
+            }
             ApiSearchRootDto searchRootDto = new ApiSearchRootDto()
             {
                 Response = true,
