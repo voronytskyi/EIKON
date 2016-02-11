@@ -17,6 +17,15 @@
             $scope.$on(settings.events.autocomplete, function (event, item) {
                 console.log(item);
             });
+
+            toastr.options = {
+                closeButton: true,
+                debug: false,
+                positionClass: 'toast-bottom-right',
+                showDuration: 300,
+                hideDuration: 1000,
+                timeOut: 5000
+            }
         };
 
         this.toggleModal = function (id) {
