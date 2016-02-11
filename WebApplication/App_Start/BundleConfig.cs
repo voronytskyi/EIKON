@@ -10,6 +10,7 @@ namespace WebApplication
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
+                "~/Scripts/bootstrap3-typeahead.js",
                 "~/Scripts/app/app.js",
                 "~/Scripts/app/services/settings.js",
                 "~/Scripts/app/services/data-context.js",

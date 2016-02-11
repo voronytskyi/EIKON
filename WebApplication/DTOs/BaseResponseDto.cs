@@ -2,6 +2,6 @@
 {
     public class BaseResponseDto
     {
-        public bool IsSuccess;
+        protected bool IsSuccess;
     }
 }

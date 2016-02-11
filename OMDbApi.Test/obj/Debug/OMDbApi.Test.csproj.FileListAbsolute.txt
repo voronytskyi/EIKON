@@ -9,3 +9,14 @@ C:\Users\MVO\Desktop\EIKON\OMDbApi.Test\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MVO\Desktop\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.csprojResolveAssemblyReference.cache
 C:\Users\MVO\Desktop\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.dll
 C:\Users\MVO\Desktop\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.pdb
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\OMDbApi.Test.dll
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\OMDbApi.Test.pdb
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\nunit.framework.dll
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\OMDbApi.dll
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\Newtonsoft.Json.dll
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\OMDbApi.pdb
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\nunit.framework.xml
+D:\Projects\EIKON\OMDbApi.Test\bin\Debug\Newtonsoft.Json.xml
+D:\Projects\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.csprojResolveAssemblyReference.cache
+D:\Projects\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.dll
+D:\Projects\EIKON\OMDbApi.Test\obj\Debug\OMDbApi.Test.pdb

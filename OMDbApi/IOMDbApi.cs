@@ -5,7 +5,7 @@ namespace OMDbApi
 {
     public interface IOMDbApi
     {
-        ApiSearchRootDto Search(string title, int page);
+        ApiSearchRootDto Search(string title, int? page);
         ApiDetailsDto GetDetails(string id);
     }
 }

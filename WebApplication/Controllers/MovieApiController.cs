@@ -14,9 +14,10 @@ namespace WebApplication.Controllers
         public MovieApiController(OMDbApi.IOMDbApi api, ILog logger)
         {
             _api = api;
+            _logger = logger;
         }
 
-        public JsonResult Search(string title, int page)
+        public JsonResult Search(string title, int? page)
         {
             OMDbApi.DTOs.ApiSearchRootDto searchRootDto;
             try
@@ -33,10 +34,10 @@ namespace WebApplication.Controllers
             }
             if (searchRootDto.Response)
             {
-                List<OMDbApi.DTOs.ApiSearchDto> searchDtoList = new List<OMDbApi.DTOs.ApiSearchDto>();
+                List<SearchItemDto> searchDtoList = new List<SearchItemDto>();
                 foreach (var responseDto in searchRootDto.Search)
                 {
-                    searchDtoList.Add(new OMDbApi.DTOs.ApiSearchDto()
+                    searchDtoList.Add(new SearchItemDto()
                     {
                         Title = responseDto.Title,
                         ImdbID = responseDto.ImdbID,
@@ -45,7 +46,12 @@ namespace WebApplication.Controllers
                         Type = responseDto.Type
                     });
                 }
-                return Json(searchDtoList, JsonRequestBehavior.AllowGet);
+                SearchDto searchDto = new SearchDto()
+                {
+                    Items = searchDtoList,
+                    TotalCount = searchRootDto.TotalResults
+                };
+                return Json(searchDto, JsonRequestBehavior.AllowGet);
             }
             return Json(new ErrorDto()
             {

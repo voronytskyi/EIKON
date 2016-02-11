@@ -1,9 +1,6 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-@section scripts{
-    @Scripts.Render("~/bundles/app")
-}
 <div ng-app="omdb" ng-controller="MainCtrl as mainCtrl">
     <h2 class="text-center">
         Welcome to Open Movie Database!
@@ -12,27 +9,92 @@
         <div class="col-lg-6">
             <p>
                 <div class="input-group">
-                    <input type="text" class="form-control" placeholder="Search..." ng-model="mainCtrl.searchText">
-                    <!--<span class="input-group-addon">
+                    <input omdb-autocomplete type="text" class="typeahead form-control" placeholder="Search..." ng-model="mainCtrl.searchText" ng-change="mainCtrl.search()">
+                    <span class="input-group-addon">
                         <span class="glyphicon glyphicon-search"></span>
-                    </span>-->
-                    <span class="input-group-btn">
-                        <button class="btn btn-primary" type="button" ng-click="mainCtrl.search()"><span class="glyphicon glyphicon-search"></span></button>
                     </span>
+                    <!--<span class="input-group-btn">
+                        <button class="btn btn-primary" type="button" ng-click="mainCtrl.search()"><span class="glyphicon glyphicon-search"></span></button>
+                    </span>-->
                 </div>
             </p>
+        </div>
+        <div class="col-lg-6">
+            <h4 class="total-count-text">Found movies: {{mainCtrl.totalCount}}</h4>
         </div>
     </div>
     <div class="row">
         <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="movie in mainCtrl.movies">
-            <a class="thumbnail" href="#" ng-click="mainCtrl.toggleModal()">
+            <a class="thumbnail" href="#" ng-click="mainCtrl.toggleModal(movie.ImdbID)">
                 <img class="img-responsive" src="http://placehold.it/400x300" alt="" ng-src="{{movie.Poster}}">
                 <span class="movie-title">{{movie.Title}}</span>
                 <span class="movie-year">{{movie.Year}}</span>
             </a>
         </div>
     </div>
-    <modal title="Movie Details" visible="mainCtrl.showModal">
-        Hello
+    <modal title="Movie Details" visible="showModal">
+        <div class="row">
+            <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="">
+                <img class="img-responsive" alt="No Image" ng-src="{{mainCtrl.detail.Poster}}">
+            </label>
+            <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
+                <div class="row">
+                    <label class="col-md-2" style="">Title</label>
+                    <div class="col-md-10">{{mainCtrl.detail.Title}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Actors</label>
+                    <div class="col-md-10">{{mainCtrl.detail.Actors}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Awards</label>
+                    <div class="col-md-10">{{mainCtrl.detail.Awards}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Plot</label>
+                    <div class="col-md-10">{{mainCtrl.detail.Plot}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Writer</label>
+                    <div class="col-md-10">{{mainCtrl.detail.Writer}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Country</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Country}}</div>
+                    <label class="col-md-2" style="">Language</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Language}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Director</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Director}}</div>
+                    <label class="col-md-2" style="">Genre</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Genre}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Metascore</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Metascore}}</div>
+                    <label class="col-md-2" style="">Rated</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Rated}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Released</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Released}}</div>
+                    <label class="col-md-2" style="">Year</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Year}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">Runtime</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Runtime}}</div>
+                    <label class="col-md-2" style="">Type</label>
+                    <div class="col-md-4">{{mainCtrl.detail.Type}}</div>
+                </div>
+                <div class="row">
+                    <label class="col-md-2" style="">IMDb Rating</label>
+                    <div class="col-md-4">{{mainCtrl.detail.imdbRating}}</div>
+                    <label class="col-md-2" style="">IMDb Votes</label>
+                    <div class="col-md-4">{{mainCtrl.detail.imdbVotes}}</div>
+                </div>
+            </div>
+        </div>
     </modal>
 </div>

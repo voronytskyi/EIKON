@@ -14,7 +14,7 @@ namespace OMDbApi.Test.Mocks
             _itemList = itemList;
         }
 
-        public ApiSearchRootDto Search(string title, int page)
+        public ApiSearchRootDto Search(string title, int? page)
         {
             if (_itemList == null)
             {

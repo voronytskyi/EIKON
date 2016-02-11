@@ -3,24 +3,33 @@
     padding-bottom: 20px;
 }
 
+.total-count-text {
+    padding-top: 5px;
+}
+
 .thumbnail {
     height: 335px;
     position: relative;
 }
-.thumbnail img {
-    max-height: 300px;
-}
 
-.thumbnail .movie-title {
-    font-weight: bold;
-}
+    .thumbnail img {
+        max-height: 300px;
+    }
 
-.thumbnail .movie-type {
-    color: black;
-}
+    .thumbnail .movie-title {
+        font-weight: bold;
+    }
 
-.thumbnail .movie-year {
-    position: absolute;
-    right: 0;
-    font-weight: bold;
+    .thumbnail .movie-type {
+        color: black;
+    }
+
+    .thumbnail .movie-year {
+        position: absolute;
+        right: 0;
+        font-weight: bold;
+    }
+
+.modal-body-loader {
+    font-size: 18px;
 }

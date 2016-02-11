@@ -25,10 +25,10 @@
                     return processResponse(response);
                 });
             },
-            autocomplete: function (title) {
-                return $http.get(url('autocomplete'), {
+            details: function (id) {
+                return $http.get(url('details'), {
                     params: {
-                        title: title
+                        id: id
                     }
                 }).then(function (response) {
                     return processResponse(response);

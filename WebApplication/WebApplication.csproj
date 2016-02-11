@@ -138,6 +138,7 @@
     <Compile Include="DTOs\ErrorDto.cs" />
     <Compile Include="DTOs\MovieApi\DetailsDto.cs" />
     <Compile Include="DTOs\MovieApi\SearchDto.cs" />
+    <Compile Include="DTOs\MovieApi\SearchItemDto.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -152,6 +153,7 @@
     <Content Include="Scripts\app\directives\modal.js" />
     <Content Include="Scripts\app\services\data-context.js" />
     <Content Include="Scripts\app\services\settings.js" />
+    <Content Include="Scripts\bootstrap3-typeahead.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>

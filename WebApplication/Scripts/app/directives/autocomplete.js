@@ -29,13 +29,37 @@
                 searchText: '='
             },
             link: function (scope, element, attrs) {
-                scope.$watch('searchText', function (newValue) {
-                    throttledSearch(newValue, scope);
+
+                $(element).typeahead({
+                    delay: settings.autocompleteTimeout,
+                    source: function(query, process) {
+
+                        var text = $(element).val();
+                        dataContext.search(text).then(function(response) {
+                            var items = [];
+                            angular.forEach(response.Items, function(value, key) {
+                                this.push({
+                                    id: value.ImdbID,
+                                    name: value.Title
+                                });
+                            }, items);
+                            process(items);
+                        });
+                    },
+                    autoSelect: true,
+                    afterSelect : function(item) {
+                        var a1 = scope;
+                        var a2 = dataContext;
+                        debugger;
+                        //trigger load grid from heres
+                    }
                 });
-            },
-            template: '<div class="autocomplete">\
-                          <div class="movie" ng-repeat="movie in movies">{{::movie.name}}</div>\
-                      </div>'
+                /*scope.$watch('searchText', function (newValue) {
+                    if (newValue) {
+                        throttledSearch(newValue, scope);
+                    }
+                });*/
+            }
         };
     }]);
 })();

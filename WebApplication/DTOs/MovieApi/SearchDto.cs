@@ -1,4 +1,6 @@
-﻿namespace WebApplication.DTOs.MovieApi
+﻿using System.Collections.Generic;
+
+namespace WebApplication.DTOs.MovieApi
 {
     public class SearchDto : BaseResponseDto
     {
@@ -6,11 +8,7 @@
         {
             IsSuccess = true;
         }
-
-        public string Title;
-        public string Year;
-        public string ImdbID;
-        public string Type;
-        public string Poster;
+        public List<SearchItemDto> Items;
+        public int TotalCount;
     }
 }

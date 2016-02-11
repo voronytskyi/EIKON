@@ -13,7 +13,7 @@ namespace OMDbApi
 {
     public class OMDbApi : IOMDbApi
     {
-        public ApiSearchRootDto Search(string title, int page)
+        public ApiSearchRootDto Search(string title, int? page)
         {
             RequestParamteres requestParams = InitRequest();
             requestParams.Title = title;
