@@ -14,6 +14,7 @@ namespace WebApplication
                 "~/Scripts/App/Services/settings.js",
                 "~/Scripts/App/Services/data-context.js",
                 "~/Scripts/App/Directives/autocomplete.js",
+                "~/Scripts/App/Directives/load-image-fail.js",
                 "~/Scripts/App/Directives/modal.js",
                 "~/Scripts/App/Controllers/main.js"
                 ));

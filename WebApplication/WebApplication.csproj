@@ -150,6 +150,7 @@
     <Content Include="Scripts\App\app.js" />
     <Content Include="Scripts\App\Controllers\main.js" />
     <Content Include="Scripts\App\Directives\autocomplete.js" />
+    <Content Include="Scripts\App\Directives\load-image-fail.js" />
     <Content Include="Scripts\App\Directives\modal.js" />
     <Content Include="Scripts\App\Services\data-context.js" />
     <Content Include="Scripts\App\Services\settings.js" />

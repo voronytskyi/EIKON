@@ -17,3 +17,4 @@ C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi\bin\Debug\Newtonsoft.Json.dll
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi\bin\Debug\Newtonsoft.Json.xml
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi\obj\Debug\OMDbApi.dll
 C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi\obj\Debug\OMDbApi.pdb
+C:\Users\MVO\Desktop\Projetcs\EIKON\OMDbApi\obj\Debug\OMDbApi.csprojResolveAssemblyReference.cache

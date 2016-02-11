@@ -26,7 +26,7 @@
     <div class="row">
         <div class="col-lg-3 col-md-4 col-xs-6 thumb" ng-repeat="movie in mainCtrl.movies">
             <a class="thumbnail" href="#" ng-click="mainCtrl.toggleModal(movie.ImdbID)">
-                <img class="img-responsive" src="http://placehold.it/400x300" alt="" ng-src="{{movie.Poster}}">
+                <img class="img-responsive" omdb-img-fallback ng-src="{{movie.Poster}}">
                 <span class="movie-title">{{movie.Title}}</span>
                 <span class="movie-year bg-info">{{movie.Year}}</span>
             </a>
@@ -35,7 +35,7 @@
     <div omdb-modal="mainCtrl.showModal" title="Movie Details" is-loading="mainCtrl.detailsLoading">
         <div class="row">
             <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="">
-                <img class="img-responsive" alt="No Image" ng-src="{{mainCtrl.detail.Poster}}">
+                <img class="img-responsive" omdb-img-fallback ng-src="{{mainCtrl.detail.Poster}}">
             </label>
             <div class="col-xs-12 col-sm-6 col-md-8 col-lg-8">
                 <div class="row">
