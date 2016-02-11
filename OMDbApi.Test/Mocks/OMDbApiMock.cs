@@ -8,11 +8,13 @@ namespace OMDbApi.Test.Mocks
     public class OMDbApiMock : IOMDbApi
     {
         private List<ApiSearchDto> _itemList;
-        private List<ApiDetailsDto> _detailsList; 
+        private List<ApiDetailsDto> _detailsList;
         public void InitSearchMock(List<ApiSearchDto> itemList)
         {
             _itemList = itemList;
-        }
+        } 
+
+
 
         public ApiSearchRootDto Search(string title, int? page)
         {
@@ -32,18 +34,11 @@ namespace OMDbApi.Test.Mocks
 
         public ApiDetailsDto GetDetails(string id)
         {
-            if (_itemList == null)
+            if (_detailsList == null)
             {
                 throw new ApplicationException("Please init search mock.");
             }
-            var itemSearchList = _itemList.Where(x => x.ImdbID == id).FirstOrDefault();
-            ApiSearchRootDto searchRootDto = new ApiSearchRootDto()
-            {
-                Response = true,
-                Search = itemSearchList,
-                TotalResults = itemSearchList.Count
-            };
-            return searchRootDto;
+            return _detailsList.FirstOrDefault(x => x.imdbID == id);
         }
     }
 }
