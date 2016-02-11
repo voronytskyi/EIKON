@@ -1,7 +1,7 @@
 ﻿@{
     ViewBag.Title = "Home Page";
 }
-<div ng-app="omdb" ng-controller="MainCtrl as mainCtrl">
+<div ng-app="omdb" ng-controller="MainCtrl as mainCtrl" ng-init="mainCtrl.init()">
     <h2 class="text-center">
         Welcome to Open Movie Database!
     </h2>
@@ -32,7 +32,7 @@
             </a>
         </div>
     </div>
-    <modal title="Movie Details" visible="showModal">
+    <div omdb-modal="mainCtrl.showModal" title="Movie Details" is-loading="mainCtrl.detailsLoading">
         <div class="row">
             <label class="col-xs-12 col-sm-6 col-md-4 col-lg-4" style="">
                 <img class="img-responsive" alt="No Image" ng-src="{{mainCtrl.detail.Poster}}">
@@ -96,5 +96,5 @@
                 </div>
             </div>
         </div>
-    </modal>
+    </div>
 </div>

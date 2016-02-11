@@ -5,7 +5,10 @@
         return {
             apiUrl: '/movieapi/',
             autocompleteTimeout: 700,
-            imagePlaceholder: 'http://placehold.it/400x300'
+            imagePlaceholder: 'http://placehold.it/400x300',
+            events: {
+                autocomplete: 'autocomplete'
+            }
         }
     }]);
 })();

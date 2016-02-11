@@ -1,34 +1,48 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('omdb.controllers').controller('MainCtrl', ['dataContext', '$scope', function (dataContext, $scope) {
-        var that = this;
+    angular.module('omdb.controllers').controller('MainCtrl', ['$scope', 'dataContext', 'settings', function ($scope, dataContext, settings) {
         this.movies = [];
         this.totalCount = 0;
         this.searchText = 'james';
         this.isBusy = false;
         this.pageNumber = 1;
-
+        this.showModal = false;
         this.detail = {};
+        this.detailsLoading = false;
 
-        $scope.showModal = false;
-        this.toggleModal = function (id) {
-            dataContext.details(id).then(function (response) {
-                that.detail = response;
-            }.bind(this));
-            $scope.showModal = !$scope.showModal;
+        this.init = function () {
+            this.search();
+            //Subscribe on autocomplete updates
+            $scope.$on(settings.events.autocomplete, function (event, item) {
+                console.log(item);
+            });
         };
 
-        this.autocompleteCallback = function() {
-            debugger;
+        this.toggleModal = function (id) {
+            var ctx = this;
+
+            this.detailsLoading = true;
+
+            dataContext.details(id).then(function (response) {
+                ctx.detail = response;
+            }).finally(function () {
+                ctx.detailsLoading = false;
+            });
+
+            this.showModal = !this.showModal;
         };
 
         this.search = function () {
+            var ctx = this;
+
+            this.isBusy = true;
             dataContext.search(this.searchText, this.pageNumber).then(function (response) {
-                that.movies = response.Items;
-                that.totalCount = response.TotalCount;
-            }.bind(this));
+                ctx.movies = response.Items;
+                ctx.totalCount = response.TotalCount;
+            }).finally(function () {
+                ctx.isBusy = false;
+            });
         };
-        this.search();
     }]);
 })();
