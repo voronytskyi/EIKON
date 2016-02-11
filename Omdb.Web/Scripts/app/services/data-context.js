@@ -7,7 +7,7 @@
         },
         processResponse = function (response) {
             // validate response
-            if (response.data.IsSuccess === false) {
+            if (!response.data.IsSuccess) {
                 // show error
                 messenger.error(response.data.ErrorMessage);
             }
