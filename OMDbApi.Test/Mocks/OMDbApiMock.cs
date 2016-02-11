@@ -32,7 +32,18 @@ namespace OMDbApi.Test.Mocks
 
         public ApiDetailsDto GetDetails(string id)
         {
-            throw new NotImplementedException();
+            if (_itemList == null)
+            {
+                throw new ApplicationException("Please init search mock.");
+            }
+            var itemSearchList = _itemList.Where(x => x.ImdbID == id).FirstOrDefault();
+            ApiSearchRootDto searchRootDto = new ApiSearchRootDto()
+            {
+                Response = true,
+                Search = itemSearchList,
+                TotalResults = itemSearchList.Count
+            };
+            return searchRootDto;
         }
     }
 }
