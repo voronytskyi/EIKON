@@ -12,6 +12,7 @@ namespace WebApplication
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
                 "~/Scripts/App/app.js",
                 "~/Scripts/App/Services/settings.js",
+                "~/Scripts/App/Services/messenger.js",
                 "~/Scripts/App/Services/data-context.js",
                 "~/Scripts/App/Directives/autocomplete.js",
                 "~/Scripts/App/Directives/load-image-fail.js",

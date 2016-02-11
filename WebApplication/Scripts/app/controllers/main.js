@@ -24,15 +24,6 @@
             $scope.$on(settings.events.autocompleteEnd, function (event) {
                 that.searchLoading = false;
             });
-
-            toastr.options = {
-                closeButton: true,
-                debug: false,
-                positionClass: 'toast-top-right',
-                showDuration: 300,
-                hideDuration: 1000,
-                timeOut: 5000
-            }
         };
 
         this.toggleModal = function (id) {

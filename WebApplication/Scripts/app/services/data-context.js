@@ -1,7 +1,7 @@
 ﻿(function () {
     'use strict';
 
-    angular.module('omdb.services').factory('dataContext', ['$http', 'settings', function ($http, settings) {
+    angular.module('omdb.services').factory('dataContext', ['$http', 'settings', 'messenger', function ($http, settings, messenger) {
         var url = function (method) {
             return settings.apiUrl + method;
         },
@@ -9,7 +9,7 @@
             // validate response
             if (response.data.IsSuccess === false) {
                 // show error
-                toastr["error"](response.data.ErrorMessage, "Error");
+                messenger.error(response.data.ErrorMessage);
             }
             return response.data;
         };

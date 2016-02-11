@@ -153,6 +153,7 @@
     <Content Include="Scripts\App\Directives\load-image-fail.js" />
     <Content Include="Scripts\App\Directives\modal.js" />
     <Content Include="Scripts\App\Services\data-context.js" />
+    <Content Include="Scripts\App\Services\messenger.js" />
     <Content Include="Scripts\App\Services\settings.js" />
     <Content Include="Scripts\Plugins\bootstrap3-typeahead.js" />
     <Content Include="Web.config">
