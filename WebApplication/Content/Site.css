@@ -18,6 +18,7 @@
 
     .thumbnail img {
         max-height: 300px;
+        margin-bottom: 5px;
     }
 
     .thumbnail .movie-title {
