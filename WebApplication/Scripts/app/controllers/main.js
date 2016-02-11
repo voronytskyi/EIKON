@@ -6,7 +6,7 @@
         this.movies = [];
         this.totalCount = 0;
         this.searchText = 'james';
-        this.isBusy = false;
+        this.searchLoading = false;
         this.pageNumber = 1;
         this.showModal = false;
         this.detail = {};
@@ -15,8 +15,14 @@
         this.init = function () {
             this.search();
             //Subscribe on autocomplete updates
-            $scope.$on(settings.events.autocomplete, function (event, item) {
+            $scope.$on(settings.events.autocompleteItemSelected, function (event, item) {
                 that.search();
+            });
+            $scope.$on(settings.events.autocompleteStart, function (event) {
+                that.searchLoading = true;
+            });
+            $scope.$on(settings.events.autocompleteEnd, function (event) {
+                that.searchLoading = false;
             });
 
             toastr.options = {
@@ -45,13 +51,12 @@
 
         this.search = function () {
             var ctx = this;
-
-            this.isBusy = true;
+            this.searchLoading = true;
             dataContext.search(this.searchText, this.pageNumber).then(function (response) {
                 ctx.movies = response.Items;
                 ctx.totalCount = response.TotalCount;
             }).finally(function () {
-                ctx.isBusy = false;
+                ctx.searchLoading = false;
             });
         };
     }]);

@@ -10,12 +10,12 @@ namespace WebApplication
                       "~/Content/site.css"));
 
             bundles.Add(new ScriptBundle("~/bundles/app").Include(
-                "~/Scripts/app/app.js",
-                "~/Scripts/app/services/settings.js",
-                "~/Scripts/app/services/data-context.js",
-                "~/Scripts/app/directives/autocomplete.js",
-                "~/Scripts/app/directives/modal.js",
-                "~/Scripts/app/controllers/main.js"
+                "~/Scripts/App/app.js",
+                "~/Scripts/App/Services/settings.js",
+                "~/Scripts/App/Services/data-context.js",
+                "~/Scripts/App/Directives/autocomplete.js",
+                "~/Scripts/App/Directives/modal.js",
+                "~/Scripts/App/Controllers/main.js"
                 ));
         }
     }

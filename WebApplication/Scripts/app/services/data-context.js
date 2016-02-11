@@ -6,11 +6,10 @@
             return settings.apiUrl + method;
         },
         processResponse = function (response) {
-            //Validate response here, then pass it forward
+            // validate response
             if (response.data.IsSuccess === false) {
                 // show error
                 toastr["error"](response.data.ErrorMessage, "Error");
-                return null;
             }
             return response.data;
         };

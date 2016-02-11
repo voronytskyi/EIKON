@@ -13,7 +13,8 @@
                 $(element).typeahead({
                     delay: settings.autocompleteTimeout,
                     source: function (query, process) {
-
+                        // trigger load start event
+                        scope.$root.$broadcast(settings.events.autocompleteStart);
                         var text = $(element).val();
                         dataContext.search(text).then(function (response) {
                             var items = [];
@@ -24,13 +25,16 @@
                                 });
                             }, items);
                             process(items);
+                        }).then(function() {
+                            // trigger load end event
+                            scope.$root.$broadcast(settings.events.autocompleteEnd);
                         });
                     },
                     showHintOnFocus : true,
                     autoSelect: true,
                     afterSelect: function (item) {
                         //trigger load grid from heres
-                        scope.$root.$broadcast(settings.events.autocomplete, item);
+                        scope.$root.$broadcast(settings.events.autocompleteItemSelected, item);
                     }
                 });
             }

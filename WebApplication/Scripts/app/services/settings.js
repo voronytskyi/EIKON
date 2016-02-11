@@ -4,10 +4,12 @@
     angular.module('omdb.services').factory('settings', [function () {
         return {
             apiUrl: '/movieapi/',
-            autocompleteTimeout: 700,
+            autocompleteTimeout: 1000,
             imagePlaceholder: 'http://placehold.it/400x300',
             events: {
-                autocomplete: 'autocomplete'
+                autocompleteStart: 'autocomplete-start',
+                autocompleteEnd: 'autocomplete-end',
+                autocompleteItemSelected: 'autocomplete-item-selected'
             }
         }
     }]);

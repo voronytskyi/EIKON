@@ -147,12 +147,12 @@
   <ItemGroup>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
-    <Content Include="Scripts\app\app.js" />
-    <Content Include="Scripts\app\controllers\main.js" />
-    <Content Include="Scripts\app\directives\autocomplete.js" />
-    <Content Include="Scripts\app\directives\modal.js" />
-    <Content Include="Scripts\app\services\data-context.js" />
-    <Content Include="Scripts\app\services\settings.js" />
+    <Content Include="Scripts\App\app.js" />
+    <Content Include="Scripts\App\Controllers\main.js" />
+    <Content Include="Scripts\App\Directives\autocomplete.js" />
+    <Content Include="Scripts\App\Directives\modal.js" />
+    <Content Include="Scripts\App\Services\data-context.js" />
+    <Content Include="Scripts\App\Services\settings.js" />
     <Content Include="Scripts\Plugins\bootstrap3-typeahead.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>

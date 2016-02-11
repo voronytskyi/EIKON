@@ -7,8 +7,12 @@
     padding-top: 5px;
 }
 
+.total-count-text span {
+    font-weight: bold;
+}
+
 .thumbnail {
-    height: 335px;
+    height: 350px;
     position: relative;
 }
 
@@ -18,6 +22,9 @@
 
     .thumbnail .movie-title {
         font-weight: bold;
+        max-width: 233px;
+        display: block;
+        position: absolute;
     }
 
     .thumbnail .movie-type {
@@ -27,9 +34,47 @@
     .thumbnail .movie-year {
         position: absolute;
         right: 0;
-        font-weight: bold;
     }
 
 .modal-body-loader {
-    font-size: 18px;
+    font-size: 24px;
+    height: 150px;
+    text-align: center;
+    padding-top: 50px;
+}
+
+.glyphicon-refresh-animate {
+    animation: spin .7s infinite linear;
+    -webkit-animation: spin2 .7s infinite linear;
+    -moz-animation: spin2 .7s infinite linear;
+}
+
+@-moz-keyframes spin2 {
+    from {
+        -moz-transform: rotate(0deg);
+    }
+
+    to {
+        -moz-transform: rotate(360deg);
+    }
+}
+
+@-webkit-keyframes spin2 {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform: scale(1) rotate(0deg);
+    }
+
+    to {
+        transform: scale(1) rotate(360deg);
+    }
 }
